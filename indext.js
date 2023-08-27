@@ -10,7 +10,7 @@ alert("AVVERTENZA IMOPORTANTE: clicca su AVVERTENZA");
 
 // if (a == 1 ) {
 //  alert("a causa del tuo nome non potremo farti entrare. caricamento in corso...");
-//  window.location = "http://dj2828.ga";
+//  window.location = "http://dj2828.github.io/sito";
 
 // }
 
@@ -21,7 +21,7 @@ alert("AVVERTENZA IMOPORTANTE: clicca su AVVERTENZA");
 function tutorial () {
     var ok = window.prompt('sei sicuro???');
     if (ok == 'si' || 'Si') {
-        window.location = 'http://dj2828.ga/tutorial.html';
+        window.location = 'http://dj2828.github.io/sito/tutorial.html';
     }
     else{
         alert('ok');
