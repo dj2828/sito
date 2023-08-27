@@ -1,0 +1,39 @@
+#pag{
+    overflow: hidden;
+    /* per nn fare scorrere la pag */
+}
+.t{ 
+    background-color: blue;
+    color: white;
+    font-family: 'black 900', montserrat;
+}
+.img{
+    position: relative;
+    height: 9cm;
+    left: 6%;
+    bottom: -6%;
+}
+#imimg{
+    position: relative;
+    bottom: 10cm;
+    left: 20cm;
+    font-family: 'black 900', montserrat;
+    color: white;
+}
+#cost{
+    position: relative;
+    left: 20cm;
+    bottom: 10cm;
+    font-family: 'black 900', montserrat;
+    color:blue;
+}
+#compra{
+    background-color: blue;
+    border: 2px solid black;
+    text-align: center;
+    border-radius: 10px;
+    text-transform:uppercase;
+    font-family: 'black 900', montserrat;
+    color:white;
+    text-decoration: none;
+}

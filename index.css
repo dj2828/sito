@@ -1,0 +1,68 @@
+/* tatso */
+.t{ 
+    background-color: blue;
+    color: white;
+    font-family: 'black 900', montserrat;
+}
+/* lista */
+ul{
+    list-style-type: none;
+}
+/* per indext */
+.ben{
+    border: 2px solid red;
+    border-radius: 1111px;
+    text-align: center;
+    background-color: blue;
+    color: white;
+    letter-spacing: 9px;
+    text-transform:uppercase;
+    font: weight 800px;
+    font-family: 'black 900', montserrat;
+}
+.b{
+    background-color: blue;
+    border: 1px solid black;
+    border-radius: 4px;
+    text-align: center;
+    width: 70px;
+    color: white;
+    position:relative;
+    left: 45%;
+    font-family: 'black 900', montserrat;
+}
+#b{
+    background-color: blue;
+    border: 1px solid black;
+    border-radius: 4px;
+    text-align: center;
+    width: 95px;
+    color: white;
+    position:relative;
+    left: 44.3%;
+    font-family: 'black 900', montserrat;
+}
+.sottotitolo{
+    color: white;
+    font-family: 'black 900', montserrat;
+    height: 10px;
+    text-align: center;
+    position: relative;
+}
+.sottotitoloBlack{
+    color: black;
+    font-family: 'black 900', montserrat;
+    height: 10px;
+    text-align: center;
+    position: relative;
+}
+#pagau{
+    overflow-x: hidden;
+    /* per nn fare scorrere la pag */
+}
+/*bassa def*/
+#imgsop{
+    text-align: center;
+    position: relative;
+    left: 15cm;
+}
