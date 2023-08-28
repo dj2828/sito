@@ -1,6 +1,6 @@
 alert("ciao, sono il sito creato da dj 2828");
-alert("ricarica SEMPRE ogni pagina, o premi Ctrl + F5");
-alert("AVVERTENZA IMOPORTANTE: clicca su AVVERTENZA");
+// alert("ricarica SEMPRE ogni pagina, o premi Ctrl + F5");
+// alert("AVVERTENZA IMOPORTANTE: clicca su AVVERTENZA");
 
 // var NomeGiocatore = window.prompt("metti il tuo nome");
 
