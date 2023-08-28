@@ -19,7 +19,7 @@ alert("AVVERTENZA IMOPORTANTE: clicca su AVVERTENZA");
 // }
 
 function tutorial () {
-    var ok = window.prompt('sei sicuro???');
+    var ok = window.prompt('sei sicuro?');
     if (ok == 'si' || 'Si') {
         window.location = 'http://dj2828.github.io/sito/tutorial.html';
     }
