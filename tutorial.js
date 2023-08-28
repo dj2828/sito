@@ -1,33 +1,22 @@
 var cosa = window.prompt("che link ti serve?");
 
-if (cosa == "") {
-    window.location = "http://dj2828.github.io/sito/tutorial.html";
-}
-else {
-    document.getElementById("o").innerHTML = "ok cerco" + " " + cosa ;
-}
+document.getElementById('o').innerText = 'CERCO: ' + cosa;
 
-setTimeout(function() {
-    if (cosa == "2fa") {
-        window.location = "https://www.epicgames.com/account/password?#2fa-signup";
+var linkd = {
+    "2fa": "https://www.epicgames.com/account/password?#2fa-signup",
+    ".py": "https://www.python.org/downloads/",
+    "rec": "http://dj2828.ga/script/prova%20php.html",
+    'admin': 'http://dj2828.ga/script/admin.html'
+};
+
+
+setTimeout(function() { 
+    var link = linkd[cosa];
+    if (link != undefined){
+        window.location = link;
     }
-    if (cosa == '.py' ) {
-        window.location = 'https://www.python.org/downloads/';
+    else{
+        alert("link non trovato");
+        window.location = "http://127.0.0.1:5500/tutorial.html";
     }
-    if (cosa == 'rec' || 'Rec'){
-        window.location = 'http://dj2828.github.io/sito/script/prova%20php.html';
-    }
-    if (cosa == 'admin' || 'Admin'){
-        window.location = 'http://dj2828.github.io/sito/script/admin.html';
-    }
-
-
-
-
-
-
-
-}, 4000)
-
-
-
+}, 2000)
