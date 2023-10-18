@@ -6,7 +6,8 @@ var linkd = {
     "2fa": "https://www.epicgames.com/account/password?#2fa-signup",
     ".py": "https://www.python.org/downloads/",
     "rec": "http://dj2828.ga/script/prova%20php.html",
-    'admin': 'http://dj2828.ga/script/admin.html'
+    'admin': 'http://dj2828.ga/script/admin.html',
+    'pc': './PC!!!.html'
 };
 
 
@@ -17,6 +18,6 @@ setTimeout(function() {
     }
     else{
         alert("link non trovato");
-        window.location = "http://127.0.0.1:5500/tutorial.html";
+        window.location = "https://dj2828.github.io/sito/tutorial.html";
     }
 }, 2000)
