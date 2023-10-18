@@ -5,7 +5,7 @@
 .t{ 
     background-color: blue;
     color: white;
-    font-family: 'black 900', montserrat;
+    font-family: 'Montserrat', sans-serif;
 }
 .img{
     position: relative;
@@ -17,14 +17,14 @@
     position: relative;
     bottom: 10cm;
     left: 20cm;
-    font-family: 'black 900', montserrat;
+    font-family: 'Montserrat', sans-serif;
     color: white;
 }
 #cost{
     position: relative;
     left: 20cm;
     bottom: 10cm;
-    font-family: 'black 900', montserrat;
+    font-family: 'Montserrat', sans-serif;
     color:blue;
 }
 #compra{
@@ -33,7 +33,7 @@
     text-align: center;
     border-radius: 10px;
     text-transform:uppercase;
-    font-family: 'black 900', montserrat;
+    font-family: 'Montserrat', sans-serif;
     color:white;
     text-decoration: none;
 }

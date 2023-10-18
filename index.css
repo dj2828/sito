@@ -2,7 +2,7 @@
 .t{ 
     background-color: blue;
     color: white;
-    font-family: 'black 900', montserrat;
+    font-family: 'Montserrat', sans-serif;
 }
 /* lista */
 ul{
@@ -18,7 +18,7 @@ ul{
     letter-spacing: 9px;
     text-transform:uppercase;
     font: weight 800px;
-    font-family: 'black 900', montserrat;
+    font-family: 'Montserrat', sans-serif;
 }
 .b{
     background-color: blue;
@@ -29,7 +29,7 @@ ul{
     color: white;
     position:relative;
     left: 45%;
-    font-family: 'black 900', montserrat;
+    font-family: 'Montserrat', sans-serif;
 }
 #b{
     background-color: blue;
@@ -40,18 +40,18 @@ ul{
     color: white;
     position:relative;
     left: 44.3%;
-    font-family: 'black 900', montserrat;
+    font-family: 'Montserrat', sans-serif;
 }
 .sottotitolo{
     color: white;
-    font-family: 'black 900', montserrat;
+    font-family: 'Montserrat', sans-serif;
     height: 10px;
     text-align: center;
     position: relative;
 }
 .sottotitoloBlack{
     color: black;
-    font-family: 'black 900', montserrat;
+    font-family: 'Montserrat', sans-serif;
     height: 10px;
     text-align: center;
     position: relative;
