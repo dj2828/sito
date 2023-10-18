@@ -7,7 +7,7 @@ var linkd = {
     ".py": "https://www.python.org/downloads/",
     "rec": "http://dj2828.ga/script/prova%20php.html",
     'admin': 'http://dj2828.ga/script/admin.html',
-    'pc': './PC!!!.html'
+    'pc': 'https://dj2828.github.io/sito/PC!!!.html'
 };
 
 
