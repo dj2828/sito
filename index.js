@@ -20,7 +20,7 @@ alert("ciao, sono il sito creato da dj 2828");
 
 function tutorial () {
     var ok = window.prompt('sei sicuro?');
-    if (ok == 'si' || 'Si') {
+    if (ok == 'si') {
         window.location = 'http://dj2828.github.io/sito/tutorial.html';
     }
     else{
