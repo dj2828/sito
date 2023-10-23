@@ -1,3 +1,0 @@
-build:
-  compress:
-    brotli: yes

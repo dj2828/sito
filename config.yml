@@ -1,0 +1,8 @@
+remote_theme: mmistakes/minimal-mistakes-jekyll
+github_pages: gemfile: true
+
+build:
+  compress:
+    brotli: yes
+
+markdown: kramdown
