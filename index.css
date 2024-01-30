@@ -60,9 +60,14 @@ ul{
     overflow-x: hidden;
     /* per nn fare scorrere la pag */
 }
-/*bassa def*/
-#imgsop{
-    text-align: center;
-    position: relative;
-    left: 15cm;
+/* per centrare le immagini nei servizzi */
+.centra{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.centra-img-dentro-al-div{
+    margin-right: 5%;
+    margin-bottom: 2%;
 }
