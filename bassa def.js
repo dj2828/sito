@@ -20,7 +20,7 @@ function trio(a){
   }
   else{
     var trio = window.prompt('come si dice ok in triese');
-    if (trio == 'blob' || trio == 'Blob') {
+    if (trio == 'sasso' || trio == 'Sasso') {
       let date = new Date();
       date.setTime(date.getTime() + 60*1000);
       let expires = "expires="+ date.toUTCString();
