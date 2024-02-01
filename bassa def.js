@@ -19,8 +19,8 @@ function trio(a){
     window.location = a;
   }
   else{
-    var trio = window.prompt('come si dice ciao in triese');
-    if (trio == 'balta' || trio == 'Balta') {
+    var trio = window.prompt('come si dice che ore sono? in triese');
+    if (trio == 'sbarda cum' || trio == 'Sbarda cum') {
       let date = new Date();
       date.setTime(date.getTime() + 60*1000);
       let expires = "expires="+ date.toUTCString();
