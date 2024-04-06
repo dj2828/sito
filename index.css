@@ -28,7 +28,7 @@ ul{
     width: 70px;
     color: white;
     position:relative;
-    left: 45%;
+    right: 2%;
     font-family: 'Montserrat', sans-serif;
 }
 #b{
@@ -39,7 +39,7 @@ ul{
     width: 95px;
     color: white;
     position:relative;
-    left: 44.3%;
+    right: 2%;
     font-family: 'Montserrat', sans-serif;
 }
 .sottotitolo{
@@ -61,13 +61,7 @@ ul{
     /* per nn fare scorrere la pag */
 }
 /* per centrare le immagini nei servizzi */
-.centra{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
-}
-.centra-img-dentro-al-div{
+.fixa_img_in_servizzi{
     margin-right: 5%;
     margin-bottom: 2%;
 }
