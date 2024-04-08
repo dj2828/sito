@@ -1,7 +1,7 @@
-/* #pag{ */
-    /* overflow: hidden; */
+#pag{
+    overflow: hidden;
     /* per nn fare scorrere la pag */
-/* } */
+}
 .t{ 
     background-color: blue;
     color: white;
