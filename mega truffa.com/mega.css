@@ -1,7 +1,7 @@
-#pag{
-    overflow: hidden;
+/* #pag{ */
+    /* overflow: hidden; */
     /* per nn fare scorrere la pag */
-}
+/* } */
 .t{ 
     background-color: blue;
     color: white;
@@ -27,13 +27,18 @@
     font-family: 'Montserrat', sans-serif;
     color:blue;
 }
+
 #compra{
     background-color: blue;
-    border: 2px solid black;
-    text-align: center;
+    border: 1px solid black;
     border-radius: 10px;
+    text-align: center;
+    color: white;
     text-transform:uppercase;
     font-family: 'Montserrat', sans-serif;
-    color:white;
     text-decoration: none;
+}
+#compra:hover{
+    background-color: black;
+    border: 1px solid blue;
 }
