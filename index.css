@@ -15,33 +15,57 @@ ul{
     text-align: center;
     background-color: blue;
     color: white;
-    letter-spacing: 9px;
-    text-transform:uppercase;
-    font: weight 800px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
 }
+
 .b{
     background-color: blue;
     border: 1px solid black;
     border-radius: 4px;
     text-align: center;
-    width: 70px;
+    width: 110px;
     color: white;
-    position:relative;
-    right: 2%;
     font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
 }
+.b:hover{
+    background-color: black;
+    border: 1px solid blue;
+}
+
+#tutorial{
+    background-color: blue;
+    border: 1px solid black;
+    border-radius: 4px;
+    text-align: center;
+    width: 150px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+}
+#tutorial:hover{
+    background-color: black;
+    border: 1px solid blue;
+}
+
 #b{
     background-color: blue;
     border: 1px solid black;
     border-radius: 4px;
     text-align: center;
-    width: 95px;
+    width: 200px;
     color: white;
-    position:relative;
-    right: 2%;
     font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
 }
+#b:hover{
+    background-color: black;
+    border: 1px solid blue;
+}
+
 .sottotitolo{
     color: white;
     font-family: 'Montserrat', sans-serif;
