@@ -47,14 +47,14 @@ function getCookie(nome) {
 }
 
 let inf = getCookie('inf');
-if (inf != '0'){
+if (inf == '0' || inf == null){
     let bnv = getCookie('bnv');
     if (bnv == '1'){
     
     }
     else{
         let date = new Date();
-        date.setTime(date.getTime() + 60*1000);
+        date.setTime(date.getTime() + 10*1000);
         let expires = "expires="+ date.toUTCString();
         document.cookie = "bnv=1; " + expires + "; path=/";
     
@@ -65,7 +65,7 @@ else{
 
 }
 
-const infinito = new Date('January 1, 2025 01:01:01 GMT');
+const infinito = new Date('January 1, 3000 01:01:01 GMT');
 let infinitogiusto = "expires="+ infinito.toUTCString();
 
 function togli() {
