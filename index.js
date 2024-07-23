@@ -47,7 +47,7 @@ function getCookie(nome) {
 }
 
 let inf = getCookie('inf');
-if (inf == '0'){
+if (inf != '0'){
     let bnv = getCookie('bnv');
     if (bnv == '1'){
     
