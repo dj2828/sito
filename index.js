@@ -54,7 +54,7 @@ if (inf == '0' || inf == null){
     }
     else{
         let date = new Date();
-        date.setTime(date.getTime() + 10*1000);
+        date.setTime(date.getTime() + 60*1000);
         let expires = "expires="+ date.toUTCString();
         document.cookie = "bnv=1; " + expires + "; path=/";
     
