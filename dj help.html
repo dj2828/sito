@@ -20,13 +20,67 @@
     <br>
     <hr color=black>
 
-    <h2 class='sottotitolo'>per chiedere aiuto a dj 2828</h2>
-    <h2 class='sottotitolo'>contattalo nella sezione aiuto nel suo server discord</h2>
+    <h2 class='sottotitolo'>Per chiedere aiuto a dj 2828</h2>
+    <h2 class='sottotitolo'>crea un ticket nella sezione <a href="https://discord.gg/Xg7VdzYxUA" target="_blank">aiuto</a> nel suo server discord</h2>
+    <br>
+    <h2 class="sottotitolo">Oppure metti il tuo nome/nick, il probblema e dove vuoi essere ricontattato</h2>
     <br>
 
+    
     <center>
-    <a href="https://discord.gg/Xg7VdzYxUA"><img src="immagini/discord.jpg" alt=""></a>
+    <input type="text" id="userName" placeholder="nome/nick">
+    <input type="text" id="why" placeholder="probblema">
+    <select id="dove">
+        <option value="discord">Discord</option>
+        <option value="whatsapp">Whatsapp</option>
+        <option value="telegram">Telegram</option>
+        <option value="altro">Altro (scrivi dove)</option>
+    </select>
+    <button onclick="sendWebhook()" class="b">Invia</button>
     </center>
+
+    <script>
+        function sendWebhook() {
+            const webhookUrl = 'https://discord.com/api/webhooks/1277928349930618900/PAWRg2zsiBupYsT9LNiTVyJwugup8aXISFNqMxnN2Seo-DZqYJPSWz0sZXLoH-W4CblE'; // Inserisci qui l'URL del tuo webhook
+
+            // Ottieni il nome dall'input dell'utente
+            const userName = document.getElementById('userName').value;
+            const why = document.getElementById('why').value;
+            const dove = document.getElementById('dove').value;
+
+            // Verifica che l'input non sia vuoto
+            if (!userName || !why) {
+                alert('Per favore, inserisci un nome o probblema');
+                return; // Esce dalla funzione se l'input è vuoto
+            }
+
+            // Dati da inviare al webhook
+            const data = {
+                content: userName+' // `'+why+'` // '+dove
+            };
+
+            // Effettua una richiesta POST usando Fetch API
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('inviato con successo!');
+                } else {
+                    alert('Errore nell\'invio del webhook. Status: ' + response.status);
+                }
+            })
+            .catch(error => {
+                console.error('Errore:', error);
+                alert('Errore di rete durante l\'invio del webhook.');
+            });
+        }
+    </script>
+
     
 
     <hr color=black>
