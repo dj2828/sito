@@ -12,6 +12,58 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+
+    <style>
+    @media screen and (max-width: 768px) {
+        .div_dj_help{
+            margin-bottom: 50px
+        }
+        .box{
+            margin-bottom: 20px;
+            width: 300px;
+            height: 40px;
+            font-family: 'Arial', sans-serif;
+        }
+        .probb_help{
+            width: 300px;
+            height: 70px;
+            margin-bottom: 20px;
+            font-family: 'Arial', sans-serif;
+        }
+        select{
+            height: 40px;
+            margin-right: 30px;
+            font-family: 'Arial', sans-serif;
+        }
+        button{
+            height: 40px;
+        }
+        h2{
+            margin-bottom: 25%;
+        }
+    }
+    .box{
+        width: 300px;
+        height: 40px;
+        margin-bottom: 20px;
+        font-family: 'Arial', sans-serif;
+    }
+    .probb_help{
+        width: 300px;
+        height: 70px;
+        margin-bottom: 20px;
+        font-family: 'Arial', sans-serif;
+    }
+    select{
+        height: 40px;
+        margin-right: 30px;
+        font-family: 'Arial', sans-serif;
+    }
+    button{
+        height: 40px;
+    }
+    </style>
+
 </head>
 <body bgcolor="ff5500">
     <center>
@@ -20,16 +72,18 @@
     <br>
     <hr color=black>
 
-    <h2 class='sottotitolo'>Per chiedere aiuto a dj 2828</h2>
-    <h2 class='sottotitolo'>crea un ticket nella sezione <a href="https://discord.gg/Xg7VdzYxUA" target="_blank">aiuto</a> nel suo server discord</h2>
+    <div class="div_dj_help">
+    <h2 class='sottotitolo'>Per chiedere aiuto a dj 2828 crea un ticket nella sezione <a href="https://discord.gg/Xg7VdzYxUA" target="_blank">aiuto</a> nel suo server discord
+    </h2>
     <br>
     <h2 class="sottotitolo">Oppure metti il tuo nome/nick, il probblema e dove vuoi essere ricontattato</h2>
     <br>
+    </div>
 
     
     <center>
-    <input type="text" id="userName" placeholder="nome/nick">
-    <input type="text" id="why" placeholder="probblema">
+    <input type="text" id="userName" placeholder="nome/nick" class="box"> <br>
+    <textarea type="text" id="why" placeholder="probblema" class="probb_help"></textarea> <br>
     <select id="dove">
         <option value="discord">Discord</option>
         <option value="whatsapp">Whatsapp</option>
