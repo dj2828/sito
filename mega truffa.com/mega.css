@@ -1,4 +1,4 @@
-#pag{
+body{
     overflow: hidden;
     /* per nn fare scorrere la pag */
 }
@@ -41,4 +41,31 @@
 #compra:hover{
     background-color: black;
     border: 1px solid blue;
+}
+
+@media screen and (max-width: 768px) {
+    .img{
+        position: static;
+        left: auto;
+        bottom: auto;
+        height: 100%;
+        width: 100%;
+    }
+    #imimg{
+        position: relative;
+        bottom: auto;
+        left: auto;
+        text-align: center;
+    }
+    #cost{
+        position: static;
+        left: auto;
+        bottom: auto;
+        text-align: center;
+        margin-left: 25%;
+    }
+    body{
+        overflow-x: hidden;
+        overflow: auto;
+    }
 }
