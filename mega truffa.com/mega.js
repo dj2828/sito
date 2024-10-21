@@ -17,7 +17,7 @@ function scarica_gta7 () {
         alert('ok, scaricamento in corso...');
     }
     else{
-        alert('gta 7 è disponibile solo su windows 11');
+        alert('gta 7 è disponibile solo su windows 12?(penso)');
     };
 
 };
