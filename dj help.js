@@ -27,7 +27,7 @@ function kick(){
     }
 
     const data = {
-        content: '<@685136676984586260> ' + userName + ' ha chiesto aiuto per il kick'
+        content: '<@685136676984586260> `'+userName+'` ha chiesto aiuto per il kick'
     }
     invio(data);
 }
