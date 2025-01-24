@@ -1,4 +1,4 @@
-const webhookUrl = atob('https://discord.com/api/webhooks/1332304968467611701/vAZ7Sa-jOsJuVIcguEpU5sGsxEerqE1sGC9C_DbO9G7T6sKHPpZFJaL3msvc-zTRZF4L'); // Inserisci qui l'URL del tuo webhook
+const webhookUrl = 'aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTMzMjMwNDk2ODQ2NzYxMTcwMS92QVo3U2Etak9zSnVWSWNndUVwVTVzR3N4RWVycUUxc0dDOUNfRGJPOUc3VDZzS0hQcFpGSmFMM21zdmMtelRSWkY0TA==';
 
 function help() {
     // Ottieni il nome dall'input dell'utente
