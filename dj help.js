@@ -1,4 +1,4 @@
-const webhookUrl = 'https://discord.com/api/webhooks/1331284746663362652/jB_5kd9v5KHLSh3vgyQ8hvFo-km8b_NYdiDuWNE1avYvZ68CAerpT4voHA5UN-PJ3HA3'; // Inserisci qui l'URL del tuo webhook
+const webhookUrl = atob('https://discord.com/api/webhooks/1332304968467611701/vAZ7Sa-jOsJuVIcguEpU5sGsxEerqE1sGC9C_DbO9G7T6sKHPpZFJaL3msvc-zTRZF4L'); // Inserisci qui l'URL del tuo webhook
 
 function help() {
     // Ottieni il nome dall'input dell'utente
@@ -33,7 +33,7 @@ function kick(){
 }
 
 function invio(data){
-    fetch(webhookUrl, {
+    fetch(atob(webhookUrl), {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
