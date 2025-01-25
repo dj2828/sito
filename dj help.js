@@ -1,4 +1,4 @@
-const webhookUrl = 'aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTMzMjMwNDk2ODQ2NzYxMTcwMS92QVo3U2Etak9zSnVWSWNndUVwVTVzR3N4RWVycUUxc0dDOUNfRGJPOUc3VDZzS0hQcFpGSmFMM21zdmMtelRSWkY0TA==';
+const webhookUrl = 'aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTMzMjU5MzM4OTIxNTk0MDY3MC92am1pMWE0UWFUZVVqeldnbGJBRG1xUkI5UEkxaU13OHRzZ1RPbC1lRlo5QUxnQXU5VFN6emZLREJNYm5IZ3RiLW9ZUg==';
 
 function help() {
     // Ottieni il nome dall'input dell'utente
