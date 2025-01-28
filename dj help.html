@@ -64,16 +64,16 @@
 
     
     <center>
-    <form name="help" method="POST" netlify>
-    <input type="text" id="userName" placeholder="nome/nick" class="box"> <br>
-    <textarea type="text" id="why" placeholder="probblema" class="probb_help"></textarea> <br>
-    <select id="dove">
+    <form name="help" netlify>
+    <input type="text" id="userName" placeholder="nome/nick" class="box" name="nick"> <br>
+    <textarea type="text" id="why" placeholder="probblema" class="probb_help" name="why"></textarea> <br>
+    <select id="dove" name="dove">
         <option value="discord">Discord</option>
         <option value="whatsapp">Whatsapp</option>
         <option value="telegram">Telegram</option>
         <option value="altro">Altro (scrivi dove)</option>
     </select>
-    <button id='bottone' class="button" onclick="help()">
+    <button id='bottone' class="button" onclick="help()" type="submit">
         <div class="outline"></div>
         <div class="state state--default">
           <div class="icon">
