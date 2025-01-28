@@ -1,4 +1,4 @@
-const webhookUrl = ds_web;
+const webhookUrl = process.env.DS_WEB;
 
 function help() {
     // Ottieni il nome dall'input dell'utente
