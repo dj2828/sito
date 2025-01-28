@@ -33,7 +33,7 @@ function kick(){
 }
 
 function invio(data){
-    fetch(webhook, {
+    fetch(atob(webhookUrl), {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
