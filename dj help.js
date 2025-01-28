@@ -31,7 +31,7 @@ function kick(){
 }
 
 function invio(data){
-    fetch(process.env.DS_WEB, {
+    fetch(process.env.NEXT_PUBLIC_DS_WEB, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
