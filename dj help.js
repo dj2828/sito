@@ -1,4 +1,4 @@
-const webhookUrl = 'aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTMzMjMwNDk2ODQ2NzYxMTcwMS92QVo3U2Etak9zSnVWSWNndUVwVTVzR3N4RWVycUUxc0dDOUNfRGJPOUc3VDZzS0hQcFpGSmFMM21zdmMtelRSWkY0TA==';
+const webhookUrl = ds_web;
 
 function help() {
     // Ottieni il nome dall'input dell'utente
