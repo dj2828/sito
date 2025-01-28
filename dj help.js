@@ -1,3 +1,5 @@
+const webhook = process.env.NEXT_PUBLIC_DS_WEB;
+
 function help() {
     // Ottieni il nome dall'input dell'utente
     const userName = document.getElementById('userName').value;
@@ -31,7 +33,7 @@ function kick(){
 }
 
 function invio(data){
-    fetch(process.env.NEXT_PUBLIC_DS_WEB, {
+    fetch(webhook, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
