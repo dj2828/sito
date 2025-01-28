@@ -1,5 +1,3 @@
-const webhookUrl = process.env.DS_WEB;
-
 function help() {
     // Ottieni il nome dall'input dell'utente
     const userName = document.getElementById('userName').value;
@@ -33,7 +31,7 @@ function kick(){
 }
 
 function invio(data){
-    fetch(atob(webhookUrl), {
+    fetch(process.env.DS_WEB, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
