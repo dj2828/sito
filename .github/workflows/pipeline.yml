@@ -10,6 +10,4 @@ jobs:
     steps:
     - name: Send Webhook Notification
       run: |
-        curl -X POST -H "Content-Type: application/json" \
-        -d '{"text": "Il workflow è stato eseguito con successo!"}' \
-        ${{secrets.TOKEN_HELP}}
+        curl -X POST -H "Content-Type: application/json" -d '{"content": "Test"}' ${{secrets.TOKEN_HELP}}
