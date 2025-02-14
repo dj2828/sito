@@ -1,0 +1,18 @@
+name: Help
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Send Webhook Notification
+      run: |
+        curl -X POST -H "Content-Type: application/json" \
+        -d '{"text": "Il workflow è stato eseguito con successo!"}' \
+        ${{secrets.TOKEN_HELP}}
