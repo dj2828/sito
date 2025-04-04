@@ -1,11 +1,12 @@
-const cacheName = "dj 2828-combattimento mobile di mortali-1.0";
+const cacheName = "dj 2828-combattimento mobile di mortali-2.0"; // NOME DA CAMBIARE PER NUOVA CACHE
 const contentToCache = [
-    "Build/combattimento mobile di mortali web.loader.js",
-    "Build/combattimento mobile di mortali web.framework.js",
-    "Build/combattimento mobile di mortali web.data",
-    "Build/combattimento mobile di mortali web.wasm",
-    "TemplateData/style.css"
-
+    "Build/cmdm.loader.js",
+    "Build/cmdm.framework.js",
+    "Build/cmdm.data",
+    "Build/cmdm.wasm",
+    "TemplateData/style.css",
+    "https://dj2828.github.io/sito/mega%20truffa.com/servizzi/giochi/assetz/smash%20p1.mp4",
+    "https://dj2828.github.io/sito/mega%20truffa.com/servizzi/giochi/assetz/smash%20p2.mp4"
 ];
 
 self.addEventListener('install', function (e) {
