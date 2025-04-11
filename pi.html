@@ -41,6 +41,16 @@
       font-size: 1.2rem;
     }
 
+    #record {
+      margin: 10px 0;
+      font-size: 2rem;
+    }
+
+    #cif {
+      margin: 10px 0;
+      font-size: 2rem;
+    }
+
     .wrong {
       color: red;
     }
@@ -93,8 +103,12 @@
   </style>
 </head>
 <body>
+  <div id="record">Record: 0</div>
+  <br>
   <div id="display">π = 3.</div>
+  <div id="cif">Cifre attuali: 0</div>
   <div id="status">Inserisci la cifra successiva</div>
+  <br>
 
   <div class="keypad" id="keypad">
     <button onclick="pressKey('7')" id="btn-7">7</button>
@@ -124,8 +138,11 @@
 
     let index = 0;
     let numeri = 0;
+    let record = 0;
     const display = document.getElementById("display");
     const status = document.getElementById("status");
+    const recordD = document.getElementById("record");
+    const cif = document.getElementById("cif");
 
     function pressKey(value) {
       if (value === piDecimals[index]) {
@@ -133,7 +150,7 @@
         index++;
         status.textContent = "Corretto!";
         status.classList.remove("wrong");
-        clearHints();
+        cif.textContent = `Cifre attuali: ${index}`;
       } else {
         for (let i = 0; i < 5; i++) {
             if (i===0){
@@ -144,20 +161,19 @@
         }
         status.textContent = `Errore! La cifra corretta era "${numeri}"`;
         status.classList.add("wrong");
+
+        if (index > record) {
+          record = index;
+        }
+        recordD.textContent = `Record: ${record}`;
+
         showSequentialHints(index); // mostra da quella sbagliata
         index = 0;
         display.textContent = "π = 3.";
       }
     }
 
-    function clearHints() {
-      for (let i = 0; i <= 9; i++) {
-        document.getElementById(`btn-${i}`).classList.remove("glow");
-      }
-    }
-
     function showSequentialHints(startIndex) {
-      clearHints();
       const nextDigits = piDecimals.slice(startIndex, startIndex + 5).split("");
 
       nextDigits.forEach((digit, i) => {
