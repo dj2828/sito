@@ -86,7 +86,7 @@ ul{
     text-align: center;
     position: relative;
 }
-#pagau{
+body{
     overflow-x: hidden;
     /* per nn fare scorrere la pag */
 }
