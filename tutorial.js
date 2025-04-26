@@ -16,7 +16,7 @@ var linkd = {
 setTimeout(function() { 
     var link = linkd[cosa];
     if (link != undefined){
-        window.location = link;
+        window.open(link, '_self');
     }
     else{
         alert("link non trovato");

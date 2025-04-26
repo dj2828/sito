@@ -77,14 +77,12 @@ ul{
     font-family: 'Montserrat', sans-serif;
     height: 10px;
     text-align: center;
-    position: relative;
 }
 .sottotitoloBlack{
     color: black;
     font-family: 'Montserrat', sans-serif;
     height: 10px;
     text-align: center;
-    position: relative;
 }
 body{
     overflow-x: hidden;

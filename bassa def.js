@@ -16,7 +16,7 @@ function getCookie(nome) {
 function trio(a){
   let trioc = getCookie('trioc');
   if (trioc == '1'){
-    window.location = a;
+    window.open(a, '_self');
   }
   else{
     var trio = window.prompt('come si dice che ore sono? in triese');
@@ -25,7 +25,7 @@ function trio(a){
       date.setTime(date.getTime() + 60*1000);
       let expires = "expires="+ date.toUTCString();
       document.cookie = "trioc=1; " + expires + "; path=/";
-      window.location = a;
+      window.open(a, '_self');
     }
     else{
       alert('no.');
