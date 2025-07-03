@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <title>home</title>
+    
+    
+    <link rel="icon" href="./immagini/IO.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <style>
+        h1{
+            color: white;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 50px;
+        }
+        #sasso{
+            background-color: blue;
+            border-radius: 30px;
+            width: 60%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        a{text-decoration: none;}
+        @media screen and (max-width: 768px) {
+            h1{
+                letter-spacing: 3px;
+                font-size: 150%;
+            }
+        }
+    </style>
+</head>
+<body bgcolor="ff5500">
+    <center>
+        <div id="sasso">
+            <h1>Il timer si sbloccherà il</h1>
+            <h1 id="data-limite"></h1>
+            <h1 id="countdown"></h1>
+        </div>
+        
+    </center>
+
+    <script>
+    const link = 'https://bit.ly/m/dj_2828';
+    document.addEventListener('DOMContentLoaded', () => {
+      const dataLimite = new Date(2025, 6, 4, 0, 0); // 1 luglio 2025 ore 00:00:00
+      const dataElement = document.getElementById('data-limite');
+      const countdownEl = document.getElementById('countdown');
+
+      dataElement.textContent = dataLimite.toLocaleDateString('it-IT', {
+        day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit'
+      });
+
+      function aggiornaCountdown() {
+        const now = new Date();
+        const diff = dataLimite - now;
+
+        if (diff <= 0) {
+          window.open(link, '_self');
+          return;
+        }
+
+        const ore = String(Math.floor((diff / (1000 * 60 * 60)) % 24)).padStart(2, '0');
+        const minuti = String(Math.floor((diff / (1000 * 60)) % 60)).padStart(2, '0');
+        const secondi = String(Math.floor((diff / 1000) % 60)).padStart(2, '0');
+
+        countdownEl.textContent = `${ore}:${minuti}:${secondi}`;
+      }
+
+      aggiornaCountdown();
+      setInterval(aggiornaCountdown, 1000);
+    });
+  </script>
+
+
+    <br>
+</body>
+</html>
