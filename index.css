@@ -35,7 +35,7 @@ ul{
     letter-spacing: 1px;
     transition: background-color 0.3s, border-color 0.3s;
 }
-.b:active{
+.b:hover{
     background-color: black;
     border: 1px solid blue;
 }
@@ -51,7 +51,7 @@ ul{
     letter-spacing: 1px;
     transition: background-color 0.3s, border-color 0.3s;
 }
-#tutorial:active{
+#tutorial:hover{
     background-color: black;
     border: 1px solid blue;
 }
@@ -67,7 +67,7 @@ ul{
     letter-spacing: 1px;
     transition: background-color 0.3s, border-color 0.3s;
 }
-#b:active{
+#b:hover{
     background-color: black;
     border: 1px solid blue;
 }
