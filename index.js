@@ -82,3 +82,17 @@ function togli() {
         alert("fatto, ricliccalo per disattivarlo");
     }
 }
+
+// url shortner
+const params = new URLSearchParams(location.search);
+const a = params.get("l");
+
+const redirectMap = {
+   g: "https://google.com/",
+   carta: "https://esempio.com/pagina-carta",
+   forbice: "https://esempio.com/pagina-forbice"
+};
+
+if (redirectMap[a]) {
+   location.href = redirectMap[a];
+}
