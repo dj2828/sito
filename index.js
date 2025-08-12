@@ -94,5 +94,5 @@ const redirectMap = {
 };
 
 if (redirectMap[a]) {
-   location.href = redirectMap[a];
+   window.location.href = redirectMap[a];
 }
