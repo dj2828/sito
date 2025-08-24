@@ -24,7 +24,7 @@ console.log('Ei! Ma ru sei un Hacker...');
 function tutorial () {
     var ok = window.prompt('sei sicuro?');
     if (ok == 'si') {
-        window.open = 'http://dj2828.github.io/sito/tutorial.html';
+        window.open('http://dj2828.github.io/sito/tutorial.html');
     }
     else{
         alert('ok');
@@ -83,16 +83,29 @@ function togli() {
     }
 }
 
+
+
 // url shortner
 const params = new URLSearchParams(location.search);
-const a = params.get("l");
+const l = params.get("l");
+const b = params.get("b");
 
 const redirectMap = {
-   g: "https://google.com/",
-   carta: "https://esempio.com/pagina-carta",
-   forbice: "https://esempio.com/pagina-forbice"
+    'g': "https://google.com/",
+
+    // tutorial
+    "2fa": "https://www.epicgames.com/account/password?#2fa-signup",
+    ".py": "https://www.python.org/downloads/",
+    "rec": "http://dj2828.ga/script/prova%20php.html",
+    'admin': 'http://dj2828.ga/script/admin.html',
+    'pc': 'https://dj2828.github.io/sito/PC!!!.html',
+    '1c1': 'https://dj2828.github.io/1C1',
+    'server': 'https://github.com/dj2828/sito/releases/download/mod_vanilla_2/mod-server.py'
 };
 
-if (redirectMap[a]) {
-   window.location.href = redirectMap[a];
+if (redirectMap[l]) {
+    window.location.replace(redirectMap[l]);
+} else if (b) {
+    alert("link non trovato");
+    window.location.replace("https://dj2828.github.io/sito/tutorial.html");
 }

@@ -50,8 +50,9 @@
 
     <script>
     const link = 'https://bit.ly/m/dj_2828';
+    const dataLimite = new Date(2025, 6, 4, 0, 0); // 1 luglio 2025 ore 00:00:00
+
     document.addEventListener('DOMContentLoaded', () => {
-      const dataLimite = new Date(2025, 6, 4, 0, 0); // 1 luglio 2025 ore 00:00:00
       const dataElement = document.getElementById('data-limite');
       const countdownEl = document.getElementById('countdown');
 
@@ -64,7 +65,7 @@
         const diff = dataLimite - now;
 
         if (diff <= 0) {
-          window.open(link, '_self');
+          window.location.replace(link);
           return;
         }
 
