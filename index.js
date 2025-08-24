@@ -24,7 +24,7 @@ console.log('Ei! Ma ru sei un Hacker...');
 function tutorial () {
     var ok = window.prompt('sei sicuro?');
     if (ok == 'si') {
-        window.open('http://dj2828.github.io/sito/tutorial.html');
+        window.open('./tutorial.html');
     }
     else{
         alert('ok');
