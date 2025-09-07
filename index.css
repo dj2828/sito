@@ -37,31 +37,20 @@ ul{
     align-items: center;
     background-color: blue;
     border: 1px solid black;
-    border-radius: 4px;
-    width: 110px;
+    border-radius: 5px;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5em;
     letter-spacing: 1px;
     transition: background-color 0.3s, border-color 0.3s;
     box-shadow: 3px 3px 12px black;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
 }
 .b:hover{
     background-color: black;
     border: 1px solid blue;
-}
-.b a {
-    text-decoration: none;
-    color: white;
-    width: 100%;
-    height: 100%;
-    padding: 5px;
-}
-#tutorial{
-    width: 150px;
-}
-#b{
-    width: 200px;
 }
 
 .sottotitolo{
