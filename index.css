@@ -46,7 +46,6 @@ ul{
     transition: background-color 0.3s, border-color 0.3s;
     box-shadow: 6px 4px 20px black;
 }
-
 .b:hover{
     background-color: black;
     border: 1px solid blue;
@@ -85,4 +84,18 @@ body{
 /* per centrare le immagini nei servizzi */
 .fixa_img_in_servizzi{
     margin-right: 5%;
+}
+
+@media screen and (max-width: 768px) {
+    .b{
+        box-shadow: 3px 3px 9px black;
+    }
+    .b:hover{
+        background-color: blue;
+        border: 1px solid black;
+    }
+    .b:active{
+        background-color: black;
+        border: 1px solid blue;
+    }
 }
