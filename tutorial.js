@@ -4,6 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('o').innerText = 'CERCO: ' + cosa;
 
     setTimeout(function() { 
-        window.location.replace("index.html?b=true&l=" + cosa);
+        window.location.replace("/?b=true&l=" + cosa);
     }, 2000)
 });

@@ -107,5 +107,5 @@ if (redirectMap[l]) {
     window.location.replace(redirectMap[l]);
 } else if (b) {
     alert("link non trovato");
-    window.location.replace("https://dj2828.github.io/sito/tutorial.html");
+    window.location.replace("/tutorial.html");
 }
