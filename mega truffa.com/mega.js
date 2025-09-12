@@ -32,3 +32,6 @@ function ilkrakenwagen (){
 function FANCULO (){
     alert('i posti sono stati tutti prenotati');
 };
+function CAT(){
+    document.getElementById('skibidi').style.display = 'flex';
+}
