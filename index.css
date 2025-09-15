@@ -1,6 +1,9 @@
 hr{
     border: 1px solid black;
 }
+body{
+    overscroll-behavior: contain;
+}
 /* tatso */
 .t{ 
     background-color: blue;

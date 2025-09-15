@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natale</title>
+    
+    <script src="index.js"></script>
+    <link rel="icon" href="./immagini/IO.png">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+
+    <style>
+        h1{
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+        }
+        #rinchiuso{
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #f20000;
+            border-radius: 15px;
+            box-shadow: 4px 4px 14px;
+            width: 250px;
+        }
+        #rinchiuso h2{
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            letter-spacing: 1.5px;
+            white-space: pre-line;
+        }
+        .emoji {
+            position: absolute;
+            top: -50px;
+            font-size: 40px;
+            animation: fall 5s linear forwards;
+        }
+        @keyframes fall {
+            0%   { transform: translateY(-50px); opacity: 1; }
+            100% { transform: translateY(120vh); opacity: 1; }
+        }
+    </style>
+
+</head>
+<body bgcolor="#27d600" style="overflow: hidden;">
+    <h1 class="">🎄 NATALE 🎄</h1>
+    <div class="index">
+        <div id="rinchiuso">
+            <h2 id="countdown">Settimane</h2>
+        </div>
+    </div>
+
+    <script>
+        const natale = new Date(2025, 11, 25, 0, 0); // 25 dicembre 2025
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const countdownEl = document.getElementById('countdown');
+
+            function aggiornaCountdown() {
+                const now = new Date();
+                const diff = natale - now;
+
+                if (diff <= 0) {
+                    clearInterval(this);
+                    document.getElementById("countdown").textContent = "È NATALE!!!";
+                    cascata();
+                    setInterval(cascata, 800);
+                    return;
+                }
+
+                // settimane (millisecondi in una settimana = 1000 * 60 * 60 * 24 * 7)
+                const settimane = String(Math.floor(diff / (1000 * 60 * 60 * 24 * 7))).padStart(2, '0');
+                // giorni rimanenti nella settimana
+                const giorni = String(Math.floor((diff / (1000 * 60 * 60 * 24)) % 7)).padStart(2, '0');
+                // ore, minuti, secondi
+                const ore = String(Math.floor((diff / (1000 * 60 * 60)) % 24)).padStart(2, '0');
+                const minuti = String(Math.floor((diff / (1000 * 60)) % 60)).padStart(2, '0');
+                const secondi = String(Math.floor((diff / 1000) % 60)).padStart(2, '0');
+
+                console.log(`Settimane: ${settimane}, Giorni: ${giorni}, Ore: ${ore}, Minuti: ${minuti}, Secondi: ${secondi}`);
+
+
+                countdownEl.textContent = `Mancano
+                ${settimane} Settimane
+                ${ore} Ore
+                ${minuti} Minuti
+                ${secondi} Secondi
+                a NATALE`;
+            }
+
+            aggiornaCountdown();
+            setInterval(aggiornaCountdown, 1000);
+        });
+
+        const numero = document.body.getBoundingClientRect().width / 50000;
+        console.log(numero)
+        function cascata(){
+            for (let i=0; i<numero; i++) {
+                // Emoji albero 🎄
+                const el = document.createElement('div');
+                el.className = 'emoji';
+                el.textContent = '🎄';
+                el.style.left = Math.random()*100 + 'vw';
+                const duration = 3 + Math.random()*5;
+                el.style.animationDuration = duration + 's';
+                document.body.appendChild(el);
+
+                // Rimuovi alla fine dell'animazione
+                el.addEventListener('animationend', () => el.remove());
+            }
+
+            for (let i=0; i<numero; i++) {
+                // Emoji neve ❄
+                const el = document.createElement('div');
+                el.className = 'emoji';
+                el.textContent = '❄';
+                el.style.left = Math.random()*100 + 'vw';
+                const duration = 3 + Math.random()*5;
+                el.style.animationDuration = duration + 's';
+                document.body.appendChild(el);
+
+                // Rimuovi alla fine dell'animazione
+                el.addEventListener('animationend', () => el.remove());
+            }
+        }
+    </script>
+</body>
+</html>
