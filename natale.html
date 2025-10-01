@@ -75,19 +75,23 @@
                 const settimane = String(Math.floor(diff / (1000 * 60 * 60 * 24 * 7))).padStart(2, '0');
                 // giorni rimanenti nella settimana
                 const giorni = String(Math.floor((diff / (1000 * 60 * 60 * 24)) % 7)).padStart(2, '0');
+                // giorni totali
+                const giorniTotali = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, '0');
                 // ore, minuti, secondi
                 const ore = String(Math.floor((diff / (1000 * 60 * 60)) % 24)).padStart(2, '0');
                 const minuti = String(Math.floor((diff / (1000 * 60)) % 60)).padStart(2, '0');
                 const secondi = String(Math.floor((diff / 1000) % 60)).padStart(2, '0');
 
-                console.log(`Settimane: ${settimane}, Giorni: ${giorni}, Ore: ${ore}, Minuti: ${minuti}, Secondi: ${secondi}`);
+                console.log(`Settimane: ${settimane}, Giorni: ${giorni}, Giorni totali: ${giorniTotali}, Ore: ${ore}, Minuti: ${minuti}, Secondi: ${secondi}`);
 
 
                 countdownEl.textContent = `Mancano
                 ${settimane} Settimane
+                ${giorni} Giorni
                 ${ore} Ore
                 ${minuti} Minuti
                 ${secondi} Secondi
+                (${giorniTotali} giorni)
                 a NATALE`;
             }
 
