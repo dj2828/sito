@@ -100,7 +100,8 @@ const redirectMap = {
     'admin': 'http://dj2828.ga/script/admin.html',
     'pc': 'https://dj2828.github.io/sito/PC!!!.html',
     '1c1': 'https://dj2828.github.io/1C1',
-    'server': 'https://github.com/dj2828/sito/releases/download/mod_vanilla_2/mod-server.py'
+    'server': 'https://github.com/dj2828/sito/releases/download/mod_vanilla_2/mod-server.py',
+    'w': 'https://raw.githubusercontent.com/dj2828/aggiorna-dj/main/down/watchdog.zip'
 };
 
 if (redirectMap[l]) {
