@@ -1,4 +1,4 @@
-const CACHE_NAME = 'offline-cache-v2';
+const CACHE_NAME = 'offline-cache-v1';
 const URLS_TO_CACHE = ['/', '/index.html'];
 
 self.addEventListener('install', e => {
