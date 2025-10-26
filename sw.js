@@ -1,5 +1,5 @@
 const CACHE_NAME = 'offline-cache-v1';
-const URLS_TO_CACHE = ['/', '/index.html'];
+const URLS_TO_CACHE = ['./', './index.html', './index.css', './index.js'];
 
 self.addEventListener('install', e => {
   e.waitUntil(
