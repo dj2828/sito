@@ -21,6 +21,12 @@ console.log('Ei! Ma ru sei un Hacker...');
 //    document.getElementById("benvenuto").innerHTML = "benvenuto" + (" ") + NomeGiocatore ;
 // }
 
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+    .then(() => console.log('Service worker registrato'))
+    .catch(err => console.error('Errore:', err));
+}
+
 function tutorial () {
     var ok = window.prompt('sei sicuro?');
     if (ok == 'si') {
