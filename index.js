@@ -22,7 +22,7 @@ console.log('Ei! Ma ru sei un Hacker...');
 // }
 
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js')
+    navigator.serviceWorker.register('./sw.js')
     .then(() => console.log('Service worker registrato'))
     .catch(err => console.error('Errore:', err));
 }
