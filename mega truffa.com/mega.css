@@ -1,3 +1,6 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+}
 body{
     overflow: hidden;
     /* per nn fare scorrere la pag */
@@ -5,27 +8,34 @@ body{
 .t{ 
     background-color: blue;
     color: white;
-    font-family: 'Montserrat', sans-serif;
-}
-.img{
-    position: relative;
-    height: 9cm;
-    left: 6%;
-    bottom: -6%;
 }
 #imimg{
-    position: relative;
-    bottom: 10cm;
-    left: 20cm;
-    font-family: 'Montserrat', sans-serif;
     color: white;
 }
 #cost{
-    position: relative;
-    left: 20cm;
-    bottom: 10cm;
-    font-family: 'Montserrat', sans-serif;
     color:blue;
+}
+
+.container {
+    display: flex;
+    align-items: center; /* centra verticalmente */
+    gap: 40px; /* spazio tra immagine e testo */
+    position: fixed;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 50%); /* centra l'elemento */
+}
+
+.img {
+    max-width: 500px;
+    width: 40vw;
+    height: auto;
+    margin-right: 40px;
+}
+
+#testo {
+    text-align: center;
+    width: 900px;
 }
 
 #compra{
@@ -34,38 +44,38 @@ body{
     border-radius: 10px;
     text-align: center;
     color: white;
-    text-transform:uppercase;
-    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
     text-decoration: none;
+    padding: 5px 10px;
 }
 #compra:hover{
     background-color: black;
     border: 1px solid blue;
 }
 
-@media screen and (max-width: 768px) {
+
+@media screen and (max-width: 1000px) {
+    #testo {
+        width: 300px;
+    }
     .img{
-        position: static;
-        left: auto;
-        bottom: auto;
-        height: 100%;
-        width: 100%;
-    }
-    #imimg{
-        position: relative;
-        bottom: auto;
-        left: auto;
-        text-align: center;
-    }
-    #cost{
-        position: static;
-        left: auto;
-        bottom: auto;
-        text-align: center;
-        margin-left: 25%;
+        width: 300px;
     }
     body{
         overflow-x: hidden;
         overflow-y: auto;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        flex-direction: column;
+        bottom: 50%;
+        gap: 20px;
+    }
+    .img{
+        max-width: 300px;
+        width: 80vw;
+        margin-right: 0;
     }
 }
