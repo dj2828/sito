@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <title>Gioco del Pi Greco</title>
+  <link rel="icon" href="./immagini/IO.png">
+  <style>
+    body {
+      background: #111;
+      color: #0f0;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    a {
+      color: rgb(0, 255, 242);
+    }
+
+    #display {
+      font-size: 2rem;
+      background: #000;
+      padding: 20px;
+      border: 2px solid #0f0;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 600px;
+      overflow-x: auto;
+      white-space: nowrap;
+      margin-bottom: 20px;
+    }
+
+    #status {
+      margin: 10px 0;
+      font-size: 1.2rem;
+    }
+
+    #record {
+      margin: 10px 0;
+      font-size: 2rem;
+    }
+
+    #cif {
+      margin: 10px 0;
+      font-size: 2rem;
+    }
+
+    .wrong {
+      color: red;
+    }
+
+    .keypad {
+      display: grid;
+      grid-template-columns: repeat(3, 80px);
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .keypad #prima0 {
+      padding: 20px;
+      background: #00000000;
+      color: #00000000;
+      border: 2px solid #00000000;
+      cursor: pointer;
+    }
+    .keypad button {
+      font-size: 1.5rem;
+      padding: 20px;
+      background: #000;
+      color: #0f0;
+      border: 2px solid #0f0;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+
+    .keypad button:hover {
+      background: #0f0;
+      color: #000;
+    }
+
+    .glow {
+      background-color: #333;
+      box-shadow: 0 0 20px 5px #0f0;
+    }
+
+    @media (max-width: 500px) {
+      .keypad {
+        grid-template-columns: repeat(3, 60px);
+      }
+
+      .keypad button {
+        padding: 15px;
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="record">Record: 0</div>
+  <br>
+  <div id="display">π = 3.</div>
+  <div id="cif">Cifre attuali: 0</div>
+  <div id="status">Inserisci la cifra successiva</div>
+  <br>
+
+  <div class="keypad" id="keypad">
+    <button onclick="pressKey('7')" id="btn-7">7</button>
+    <button onclick="pressKey('8')" id="btn-8">8</button>
+    <button onclick="pressKey('9')" id="btn-9">9</button>
+
+    <button onclick="pressKey('4')" id="btn-4">4</button>
+    <button onclick="pressKey('5')" id="btn-5">5</button>
+    <button onclick="pressKey('6')" id="btn-6">6</button>
+
+    <button onclick="pressKey('1')" id="btn-1">1</button>
+    <button onclick="pressKey('2')" id="btn-2">2</button>
+    <button onclick="pressKey('3')" id="btn-3">3</button>
+
+    <button id="prima0"></button>
+    <button onclick="pressKey('0')" id="btn-0">0</button>
+  </div>
+
+  <br><br><br><p>By <a href="https://chatgpt.com">ChatGPT</a> & <a href="/">Dj 2828</a></p>
+
+
+  <script>
+    const piDecimals = 
+      "14159265358979323846264338327950288419716939937510" +
+      "58209749445923078164062862089986280348253421170679" +
+      "82148086513282306647093844609550582231725359408128";
+
+    let index = 0;
+    let numeri = 0;
+    let record = 0;
+    const display = document.getElementById("display");
+    const status = document.getElementById("status");
+    const recordD = document.getElementById("record");
+    const cif = document.getElementById("cif");
+
+    function pressKey(value) {
+      if (value === piDecimals[index]) {
+        display.textContent += value;
+        index++;
+        status.textContent = "Corretto!";
+        status.classList.remove("wrong");
+        cif.textContent = `Cifre attuali: ${index}`;
+      } else {
+        for (let i = 0; i < 5; i++) {
+            if (i===0){
+                numeri=piDecimals[index];
+            } else{
+                numeri+=piDecimals[index+i];
+            }
+        }
+        status.textContent = `Errore! La cifra corretta era "${numeri}"`;
+        status.classList.add("wrong");
+
+        if (index > record) {
+          record = index;
+        }
+        recordD.textContent = `Record: ${record}`;
+
+        showSequentialHints(index); // mostra da quella sbagliata
+        index = 0;
+        display.textContent = "π = 3.";
+      }
+    }
+
+    function showSequentialHints(startIndex) {
+      const nextDigits = piDecimals.slice(startIndex, startIndex + 5).split("");
+
+      nextDigits.forEach((digit, i) => {
+        const delay = i * 600; // 600ms tra ogni tasto
+        setTimeout(() => {
+          const btn = document.getElementById(`btn-${digit}`);
+          if (btn) {
+            btn.classList.add("glow");
+            setTimeout(() => {
+              btn.classList.remove("glow");
+            }, 500); // durata bagliore
+          }
+        }, delay);
+      });
+    }
+  </script>
+</body>
+</html>
