@@ -108,5 +108,5 @@ if (redirectMap[l]) {
     window.location.replace(redirectMap[l]);
 } else if (b) {
     alert("link non trovato");
-    window.location.replace("/tutorial.html");
+    window.location.replace("tutorial.html");
 }
