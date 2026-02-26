@@ -47,6 +47,7 @@ body{
     text-transform: uppercase;
     text-decoration: none;
     padding: 5px 10px;
+    transition: all 0.3s;
 }
 #compra:hover{
     background-color: black;
