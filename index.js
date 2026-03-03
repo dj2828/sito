@@ -1,6 +1,6 @@
 // alert("ciao, sono il sito creato da dj 2828");
 
-console.log('Ei! Ma ru sei un Hacker...');
+console.log('Ei! Ma tu sei un Hacker!');
 
 // alert("ricarica SEMPRE ogni pagina, o premi Ctrl + F5");
 // alert("AVVERTENZA IMOPORTANTE: clicca su AVVERTENZA");
@@ -50,7 +50,7 @@ let inf = getCookie('inf');
 if (inf == '0' || inf == null){
     let bnv = getCookie('bnv');
     if (bnv == '1'){
-    
+
     }
     else{
         let date = new Date();
@@ -62,7 +62,7 @@ if (inf == '0' || inf == null){
     }
 }
 else{
-
+    document.getElementById("togli-coso-iniziale").textContent = "METTI COSO INIZIALE";
 }
 
 const infinito = new Date('January 1, 3000 01:01:01 GMT');
