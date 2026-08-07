@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>The ramparts of ice</title>
+
+        <link rel="icon" href="https://dj2828.github.io/sito/immagini/IO.png" />
+        <link rel="stylesheet" href="https://dj2828.github.io/sito/dj%20help%20bottone.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet" />
+
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            img {
+                margin-bottom: -6px;
+                width: 100dvw;
+            }
+            .cambio {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                background-color: black;
+                height: 50px;
+                width: 50px;
+                border-radius: 50%;
+                color: white;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: medium;
+                border: none;
+            }
+            #tasti-div {
+                position: fixed;
+                bottom: 20px;
+                display: flex;
+                justify-content: space-around;
+                width: 100dvw;
+                transform: translateY(0);
+                transition: transform ease-in-out 0.3s;
+            }
+            #tasti-div.compact {
+                transform: translateY(100px);
+            }
+        </style>
+    </head>
+    <body>
+        <div id="tasti-div">
+            <div id="prec" class="cambio" onclick="window.location = '?cap='+(Number(CAPITOLO) - 1);"></div>
+            <select id="select" class="cambio"></select>
+            <div id="succ" class="cambio" onclick="window.location = '?cap='+(Number(CAPITOLO) + 1);"></div>
+        </div>
+
+        <script>
+            const params = new URLSearchParams(window.location.search);
+            const CAPITOLO = parseInt(params.get("cap") ?? 1);
+            const LINK = `https://official.lowee.us/manga/the-ramparts-of-ice/${String(CAPITOLO).padStart(4, '0')}`;
+            let index = 1;
+
+            function caricaProssimaImmagine() {
+                // Formatta il numero a 3 cifre aggiungendo gli zeri iniziali (es. 1 -> "001", 10 -> "010")
+                const numeroFormattato = String(index).padStart(3, '0');
+                const url = `${LINK}-${numeroFormattato}.png`;
+
+                const img = document.createElement('img');
+                img.src = url;
+
+                // Se l'immagine esiste e viene caricata con successo:
+                img.onload = () => {
+                    document.body.appendChild(img); // Aggiunge l'immagine al body
+                    index++;
+                    caricaProssimaImmagine();       // Passa alla successiva
+                };
+
+                // Se l'immagine non esiste più (404), la catena si interrompe qui:
+                img.onerror = () => {
+                    console.log(`Caricamento completato. Nessuna immagine trovata a: ${url}`);
+                    setTimeout(() => { // delay pk le immagini non sono ancora caricate
+                        window.scrollTo(0, lastScroll);
+                        // console.log("aaaa",lastScroll);
+                    }, 100);
+                };
+            }
+
+            // Avvia il ciclo
+            caricaProssimaImmagine();
+
+            let lastScroll = localStorage.getItem("Scroll ice " + CAPITOLO);
+            document.addEventListener("scroll", () => { 
+                const currentScroll = window.scrollY;
+                // console.log(currentScroll);
+                if (Math.abs(lastScroll - currentScroll) < 100) return;
+                lastScroll = currentScroll;
+                localStorage.setItem("Scroll ice " + CAPITOLO, currentScroll);
+            }, { passive: true });
+
+            document.getElementById('prec').innerText = CAPITOLO - 1;
+            document.getElementById('succ').innerText = CAPITOLO + 1;
+
+            let select = document.getElementById("select");
+            select.classList.add("cambio");
+            for (let i = 1; i <= 117; i++) {
+                const option = document.createElement("option");
+                option.value = i;
+                option.textContent = i;
+                if (i === CAPITOLO) option.selected = true
+                select.appendChild(option);
+            }
+
+            select.addEventListener('change', (e) => {
+                window.location = '?cap=' + e.target.value;
+            });
+
+            let tastiDiv = document.getElementById("tasti-div");
+            let lastScrollY = window.scrollY;
+            const DELTA = 15;
+
+            window.addEventListener(
+                "scroll",
+                () => {
+                    const currentScroll = window.scrollY;
+                    const diff = currentScroll - lastScrollY;
+
+                    // 1. Se siamo in cima alla pagina, espandiamo sempre
+                    if (currentScroll <= 20) {
+                        tastiDiv.classList.remove("compact");
+                        lastScrollY = currentScroll;
+                        return;
+                    }
+
+                    // 2. Se il movimento totale non supera la soglia DELTA, ignoriamo
+                    if (Math.abs(diff) < DELTA) return;
+
+                    // 3. Gestione direzione dello scroll
+                    if (diff > 0) {
+                        // Scorrendo verso il basso: nasconde / compatta
+                        tastiDiv.classList.add("compact");
+                    } else {
+                        // Scorrendo verso l'alto (più di DELTA px): espande
+                        tastiDiv.classList.remove("compact");
+                    }
+
+                    // Aggiorniamo la posizione precedente solo quando viene superata la soglia DELTA
+                    lastScrollY = currentScroll;
+                },
+                { passive: true }
+            );
+        </script>
+    </body>
+</html>
