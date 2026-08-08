@@ -57,7 +57,7 @@
 
         <script>
             const params = new URLSearchParams(window.location.search);
-            let ice_last = paraseInt(localStorage.getItem("Ice last") ?? 1);
+            let ice_last = parseInt(localStorage.getItem("Ice last") ?? 1);
             const CAPITOLO = parseInt(params.get("cap") ?? ice_last);
             const LINK = `https://official.lowee.us/manga/the-ramparts-of-ice/${String(CAPITOLO).padStart(4, '0')}`;
             let index = 1;
