@@ -57,9 +57,11 @@
 
         <script>
             const params = new URLSearchParams(window.location.search);
-            const CAPITOLO = parseInt(params.get("cap") ?? 1);
+            const CAPITOLO = parseInt(params.get("cap") ?? (localStorage.getItem("Ice last") ?? 1));
             const LINK = `https://official.lowee.us/manga/the-ramparts-of-ice/${String(CAPITOLO).padStart(4, '0')}`;
             let index = 1;
+            
+            localStorage.setItem("Ice last", CAPITOLO);
 
             function caricaProssimaImmagine() {
                 // Formatta il numero a 3 cifre aggiungendo gli zeri iniziali (es. 1 -> "001", 10 -> "010")
@@ -89,13 +91,13 @@
             // Avvia il ciclo
             caricaProssimaImmagine();
 
-            let lastScroll = localStorage.getItem("Scroll ice " + CAPITOLO);
+            let lastScroll = localStorage.getItem("Ice scroll" + CAPITOLO);
             document.addEventListener("scroll", () => { 
                 const currentScroll = window.scrollY;
                 // console.log(currentScroll);
                 if (Math.abs(lastScroll - currentScroll) < 100) return;
                 lastScroll = currentScroll;
-                localStorage.setItem("Scroll ice " + CAPITOLO, currentScroll);
+                localStorage.setItem("Ice scroll" + CAPITOLO, currentScroll);
             }, { passive: true });
 
             document.getElementById('prec').innerText = CAPITOLO - 1;
