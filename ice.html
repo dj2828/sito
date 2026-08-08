@@ -57,14 +57,17 @@
 
         <script>
             const params = new URLSearchParams(window.location.search);
-            const CAPITOLO = parseInt(params.get("cap") ?? (localStorage.getItem("Ice last") ?? 1));
+            let ice_last = paraseInt(localStorage.getItem("Ice last") ?? 1);
+            const CAPITOLO = parseInt(params.get("cap") ?? ice_last);
             const LINK = `https://official.lowee.us/manga/the-ramparts-of-ice/${String(CAPITOLO).padStart(4, '0')}`;
             let index = 1;
             
             localStorage.setItem("Ice last", CAPITOLO);
             const url = new URL(window.location.href);
-            url.searchParams.set("cap", CAPITOLO); // Sostituisce o aggiunge "cap" in modo sicuro
+            if (ice_last === 0) url.searchParams.delete("cap"); // per poterlo salvare come webapp senza ?cap
+            else url.searchParams.set("cap", CAPITOLO); // Sostituisce o aggiunge "cap" in modo sicuro
             window.history.pushState({}, '', url); // cambia url senza reload
+            
 
             function caricaProssimaImmagine() {
                 // Formatta il numero a 3 cifre aggiungendo gli zeri iniziali (es. 1 -> "001", 10 -> "010")
