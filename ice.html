@@ -16,9 +16,14 @@
                 padding: 0;
                 margin: 0;
             }
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
             img {
                 margin-bottom: -5px;
-                width: 100dvw;
+                width: 35dvw;
             }
             .cambio {
                 display: flex;
@@ -44,8 +49,9 @@
                 transition: transform ease-in-out 0.3s;
                 z-index: 67;
             }
-            #tasti-div.compact {
-                transform: translateY(100px);
+            @media (max-width: 425px) {
+                #tasti-div.compact{ transform: translateY(100px); }
+                img { width: 100dvw; }
             }
         </style>
     </head>
@@ -98,13 +104,13 @@
             // Avvia il ciclo
             caricaProssimaImmagine();
 
-            let lastScroll = localStorage.getItem("Ice scroll" + CAPITOLO);
+            let lastScroll = localStorage.getItem("Ice scroll " + CAPITOLO);
             document.addEventListener("scroll", () => { 
                 const currentScroll = window.scrollY;
                 // console.log(currentScroll);
                 if (Math.abs(lastScroll - currentScroll) < 100) return;
                 lastScroll = currentScroll;
-                localStorage.setItem("Ice scroll" + CAPITOLO, currentScroll);
+                localStorage.setItem("Ice scroll " + CAPITOLO, currentScroll);
             }, { passive: true });
 
             document.getElementById('prec').innerText = CAPITOLO - 1;
