@@ -1,13 +1,21 @@
 *{
     font-family: 'Montserrat', sans-serif;
 }
-body{
-    overflow: hidden;
-    /* per nn fare scorrere la pag */
+body {
+    margin: 0;
+    min-height: 100vh; /* Fa occupare al body tutta l'altezza dello schermo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra in verticale */
+    align-items: center;     /* Centra in orizzontale */
 }
 .t{ 
     background-color: blue;
     color: white;
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    z-index: 100;
 }
 #imimg{
     color: white;
@@ -62,10 +70,6 @@ body{
     .img{
         width: 300px;
     }
-    body{
-        overflow-x: hidden;
-        overflow-y: auto;
-    }
 }
 
 @media screen and (max-width: 500px) {
@@ -76,7 +80,8 @@ body{
     }
     .img{
         max-width: 300px;
-        width: 80vw;
+        width: 55dvw;
         margin-right: 0;
+        margin-top: 40px;
     }
 }
